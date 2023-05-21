@@ -2,6 +2,7 @@
 
 using namespace std;
 //Walter: primera modificacion desde rama1walter
+//Oto: segunda modificaion desde rama1oto
 //DECLARACION DE FUNCIONES
 float Deposito(float montoDepositar);
 float Retiro(float cantRetirar);
