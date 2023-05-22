@@ -1,9 +1,7 @@
 #include <iostream>
 
 using namespace std;
-//Walter: primera modificacion desde rama1walter
-//Oto: segunda modificaion desde rama1oto
-//Josue: tercera modificacion desde rama1josue
+
 //DECLARACION DE FUNCIONES
 float Deposito(float montoDepositar);
 float Retiro(float cantRetirar);
