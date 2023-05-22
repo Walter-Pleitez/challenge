@@ -38,12 +38,13 @@ int main()
                     cout<<"Su saldo actual es: "<<Saldo<<endl;
                     break;
                 case 2:
-                    cout<<"Area de Deposito"<<endl;
+                    cout<<"******** Area de Deposito ********"<<endl;
                     cout<<"Ingrese el monto: ";
                     cin>>deposito;
 
                     Saldo = Deposito(deposito);
                     cout<<"Su saldo actual es: "<<Saldo<<endl;
+                    cout<<" ******************** "<<endl;
                     break;
                 default:
                 cout<<"La opcion no esta disponible"<<endl;
