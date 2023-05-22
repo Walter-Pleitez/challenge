@@ -8,6 +8,7 @@ using namespace std;
 float Deposito(float montoDepositar);
 float Retiro(float cantRetirar);
 float Saldo = 1000;
+float *resultadoSaldo = &Saldo;
 
 int main()
 {
@@ -31,26 +32,28 @@ int main()
                 switch (opcion)
                 {
                 case 1:
-                    cout<<"Area de Retiro"<<endl;
-                    cout<<"Ingrese el monto a retirar: ";
-                    cin>>retiro;
-                    Saldo = Retiro(retiro);
-                    cout<<"Su saldo actual es: "<<Saldo<<endl;
+                    cout << "********** Area de Retiro **********" << endl;
+                    cout << "Ingrese el monto a retirar: ";
+                    cin >> retiro;
+                    cout << "Su saldo actual es: " << Retiro(retiro) << endl;
+                    cout << "*************************************" << endl;
                     break;
                 case 2:
-                    cout<<"Area de Deposito"<<endl;
-                    cout<<"Ingrese el monto: ";
-                    cin>>deposito;
+                    cout << "********** Area de Deposito **********" << endl;
+                    cout << "Ingrese el monto: ";
+                    cin >> deposito;
 
                     Saldo = Deposito(deposito);
-                    cout<<"Su saldo actual es: "<<Saldo<<endl;
+                    cout << "Su saldo actual es: " << Saldo << endl;
+                    cout << "*************************************" << endl;
                     break;
                 default:
-                cout<<"La opcion no esta disponible"<<endl;
+                    cout << "La opcion no esta disponible" << endl;
+                    cout << "*************************************" << endl;
                 }
 
                 cout << "Si desea continuar Ingrese 11, sino ingrese otro valor" << endl;
-                cin>>continuar;
+                cin >> continuar;
                 if (continuar == 11)
                 {
                     cout << "Ud sigue en el programa" << endl;
@@ -58,14 +61,14 @@ int main()
                 }
                 else
                 {
-                    
+
                     cout << "Ud ha salido del programa" << endl;
                     cout << "*************************************" << endl;
                 }
 
                 continuar;
-            } while (continuar == 11);//AREA DE PROGRAMA
-        }//VALIDACION DE PIN
+            } while (continuar == 11); //AREA DE PROGRAMA
+        }                              //VALIDACION DE PIN
 
         else
         {
@@ -73,33 +76,39 @@ int main()
             cout << "*************************************" << endl;
         }
 
-        cout<<"Si desea continuar ingrese 1, sino ingrese 0: "<<endl;
-        cin>>continuar;
-        if(continuar==1){
-            cout<<"Ud sigue en el Sistema"<<endl;
+        cout << "Si desea continuar ingrese 1, sino ingrese 0: " << endl;
+        cin >> continuar;
+        if (continuar == 1)
+        {
+            cout << "Ud sigue en el Sistema" << endl;
             cout << "*************************************" << endl;
         }
-        else{
-            cout<<"Ud ha salido del Sistema";
+        else
+        {
+            cout << "Ud ha salido del Sistema";
             cout << "*************************************" << endl;
         }
-    } while (continuar == 1);//AREA DE SISTEMA
+    } while (continuar == 1); //AREA DE SISTEMA
 
     return 0;
-}//MAIN
+} //MAIN
 
 //DEFINICION DE FUNCIONES
-float Deposito(float montoDepositar){
+float Deposito(float montoDepositar)
+{
     Saldo = Saldo + montoDepositar;
     return Saldo;
 }
-float Retiro(float cantRetirar){
-    if(Saldo>cantRetirar){
-        Saldo = Saldo - cantRetirar;
-    }
-    else{
-        cout<<"Su saldo es insuficiente"<<endl;
-    }
+float Retiro(float cantRetirar)
+{
+        if (Saldo >= cantRetirar)
+        {
+            Saldo = Saldo - cantRetirar;
+        }
+        else
+        {
+            cout << "Su saldo es insuficiente" << endl;
+        }
 
-    return Saldo;
+    return *resultadoSaldo;
 }
